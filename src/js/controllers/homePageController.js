@@ -8,5 +8,5 @@ class HomePageController {
   }
 }
 
-controller = new HomePageController();
+const controller = new HomePageController();
 controller.init();

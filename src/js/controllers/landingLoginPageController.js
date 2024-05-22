@@ -25,5 +25,5 @@ class landingLoginPageController {
   };
 }
 
-controller = new landingLoginPageController();
+const controller = new landingLoginPageController();
 controller.init();
