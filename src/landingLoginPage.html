@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/loginModal.css" />
+    <link rel="stylesheet" href="./css/landingPage.css" />
+    <script
+      type="module"
+      defer
+      src="./js/controllers/landingLoginPageController.js"
+    ></script>
+    <title>Smarter</title>
+  </head>
+  <body>
+    <html>
+      <div class="main-container">
+        <h1 class="title">
+          <object type="image/svg+xml" data="./img/brain.svg" class="brain">
+            Your browser does not support SVG
+          </object>
+          Smarter
+        </h1>
+        <h2 class="description"></h2>
+        <button class="start-button">Get Started</button>
+      </div>
+      <div class="login-modal hidden">
+        <img src="./img/cross.svg" alt="cross image" class="cross" />
+        <h1>Please Login</h1>
+        <form>
+          <div class="form-control">
+            <input id="username" type="text" required />
+            <label>Username</label>
+          </div>
+          <div class="form-control">
+            <input id="password" type="password" required />
+            <label>Password</label>
+          </div>
+          <button>Login</button>
+        </form>
+      </div>
+    </html>
+  </body>
+</html>

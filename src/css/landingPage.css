@@ -1,0 +1,52 @@
+body {
+  background-color: black;
+  margin: 0;
+  position: relative;
+}
+
+.brain {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(106deg)
+    brightness(102%) contrast(102%);
+  height: 3rem;
+}
+
+.main-container {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-container > * {
+  margin: 1.1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 3rem;
+}
+
+.description {
+  font-size: 2rem;
+  min-height: 3rem;
+}
+
+.start-button {
+  background-color: white;
+  color: black;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 1.6rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.2s ease-in;
+}
+
+.start-button:hover {
+  transform: scale(1.3);
+}

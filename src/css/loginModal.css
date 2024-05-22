@@ -1,0 +1,86 @@
+.login-modal {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  padding: 1.2rem 1.5rem;
+  width: 20%;
+  min-width: 300px;
+  min-height: 400px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 47%;
+}
+.login-modal.hidden {
+  display: none;
+}
+
+.login-modal h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-control {
+  position: relative;
+  margin: 1.8rem 0 3rem;
+}
+
+.form-control input {
+  background-color: rgba(211, 211, 211, 0.219);
+  border: 0;
+  border-radius: 1rem;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  color: #000000;
+  outline: 0;
+  font-size: 1.1rem;
+  padding: 1rem 0.5rem;
+}
+
+form button {
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  border-radius: 0.3rem;
+  padding: 1rem 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+form button:active {
+  transform: scale(0.98);
+}
+
+form label {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+  font-weight: 700;
+}
+
+.form-control label span {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: rgb(137, 137, 155);
+  transform: translateY(-2.5rem);
+}
+
+.cross {
+  height: 1.4rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
