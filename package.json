@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "parcel src/landingLoginPage.html src/homePage.html",
-    "build": "parcel build src/landingLoginPage.html src/homePage"
+    "build": "parcel build src/landingLoginPage.html src/homePage.html"
   },
   "author": "Antônio Pedro",
   "license": "ISC",
