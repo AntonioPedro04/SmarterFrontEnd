@@ -1,6 +1,6 @@
-import landingPageView from '../views/landingPageView';
-import loginView from '../views/loginView';
-import homePageView from '../views/homePageView';
+import landingPageView from '../views/landingLoginPage/landingPageView';
+import loginView from '../views/landingLoginPage/loginView';
+import homePageView from '../views/homepage/homePageView';
 import * as model from '../model';
 
 class landingLoginPageController {
@@ -9,18 +9,18 @@ class landingLoginPageController {
     landingPageView.addButtonEvent();
     loginView.createInputAnimation();
     loginView.addCrossEvent();
-    loginView.addHandlerSubmit(this.#controlLogin);
+    loginView.addHandlerSubmit(this.#controlValidate);
   }
 
-  #controlLogin = async function () {
+  #controlValidate = async function () {
     try {
       const formData = loginView.getFormData();
       await model.validateLogin(formData);
-      console.log(model.state.user);
-      localStorage.setItem('userData', JSON.stringify(model.state.user));
+      console.log(model.state.token);
+      localStorage.setItem('token', JSON.stringify(model.state.token));
       loginView.goToMainPage();
     } catch (err) {
-      console.log(err.message);
+      console.log(console.error(err));
     }
   };
 }

@@ -31,8 +31,8 @@ class LoginModalView {
 
   getFormData() {
     const username = this.#usernameEl.value;
-    const userPassword = this.#passwordEl.value;
-    return { username, userPassword };
+    const password = this.#passwordEl.value;
+    return { username, password };
   }
 
   goToMainPage() {
