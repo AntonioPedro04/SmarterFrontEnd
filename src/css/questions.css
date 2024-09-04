@@ -13,6 +13,11 @@ main {
   height: calc(100vh - var(--header-height)- 2rem);
 }
 
+.slider {
+  position: relative;
+  max-height: 800px;
+}
+
 .question {
   max-width: 1343px;
   display: flex;
@@ -46,19 +51,33 @@ main {
   outline: 0.09rem solid #c3b4b4;
 }
 
-.arrows {
-  display: flex;
-  justify-content: space-between;
-}
-
 .arrow-left-container {
   position: absolute;
-  bottom: 4vh;
-  left: calc(10vw);
+  bottom: 1rem;
+  left: 0;
 }
 
 .arrow-right-container {
   position: absolute;
-  bottom: 4vh;
-  right: calc(10vw);
+  bottom: 1rem;
+  right: 0;
+}
+
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+.dots button {
+  margin: 0.5rem;
+  border: none;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgb(223, 223, 223);
 }
