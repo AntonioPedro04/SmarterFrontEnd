@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/questions.css" />
-    <link rel="stylesheet" href="./css/homepage.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
@@ -16,12 +15,17 @@
       defer
       src="./js/views/homepage/headerView.js"
     ></script>
+    <script
+      type="module"
+      defer
+      src="./js/controllers/questionsController.js"
+    ></script>
   </head>
   <body>
     <header-component></header-component>
     <main>
       <div class="slider">
-        <div class="question">
+        <div class="question active" id="question-1">
           <div class="text">
             <h1>Which ripe drug is associated with drug-induced lupus?</h1>
           </div>
@@ -32,32 +36,54 @@
             <button>Rifampicin</button>
           </div>
         </div>
+        <div class="question" id="question-2">
+          <div class="text">
+            <h1>question2</h1>
+          </div>
+          <div class="options">
+            <button class="learn-button">Ethambutol</button>
+            <button>Pirazynamide</button>
+            <button>Isolianid</button>
+            <button>sdfsadfdfasfsdfdsfadsf</button>
+          </div>
+        </div>
+        <div class="question" id="question-3">
+          <div class="text">
+            <h1>question 33333333333</h1>
+          </div>
+          <div class="options">
+            <button class="learn-button">hey guys</button>
+            <button>how araeda</button>
+            <button>sddfdasa</button>
+            <button>zddsfsdfsdfsd</button>
+          </div>
+        </div>
+        <div class="question" id="question-3">
+          <div class="text">
+            <h1>question4</h1>
+          </div>
+          <div class="options">
+            <button class="learn-button">hey guys</button>
+            <button>44444444444</button>
+            <button>sddfdasa</button>
+            <button>zddsfsdfsdfsd</button>
+          </div>
+        </div>
         <div class="arrow-left-container">
-          <object
-            type="image/svg+xml"
-            data="./img/backArrow.svg"
-            class="arrow left"
-          >
-            Your browser does not support SVG
-          </object>
+          <img src="./img/backArrow.svg" alt="arrow left" class="arrow left" />
         </div>
         <div class="arrow-right-container">
-          <object
-            type="image/svg+xml"
-            data="./img/backArrow.svg"
+          <img
+            src="./img/backArrow.svg"
+            alt="arrow right"
             class="arrow right"
-          >
-            Your browser does not support SVG
-          </object>
+          />
         </div>
         <div class="dots">
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
+          <button class="dot active" id="dot-1"></button>
+          <button class="dot" id="dot-2"></button>
+          <button class="dot" id="dot-3"></button>
+          <button class="dot" id="dot-4"></button>
         </div>
       </div>
     </main>
