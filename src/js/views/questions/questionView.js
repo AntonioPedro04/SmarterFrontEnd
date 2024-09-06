@@ -4,41 +4,38 @@ class QuestionsView {
   arrowRight = document.querySelector('.arrow.right');
   dots = document.querySelectorAll('.dot');
   currentQuestion = 0;
-  previousQuestion;
   totalQuestions = this.questions.length;
 
   goToNextQuestionEvent() {
     this.arrowRight.addEventListener('click', () => {
-      if (this.currentQuestion == this.totalQuestions - 1) {
-        this.questions[this.currentQuestion].classList.remove('active');
-        this.questions[0].classList.add('active');
-        this.previousQuestion = this.currentQuestion;
-        this.currentQuestion = 0;
-        this.#animateDots(this.currentQuestion, this.previousQuestion);
-        console.log(this.dots);
-        return;
-      }
-      this.questions[this.currentQuestion].classList.remove('active');
-      this.questions[this.currentQuestion + 1].classList.add('active');
       this.previousQuestion = this.currentQuestion;
-      this.currentQuestion += 1;
+
+      if (this.currentQuestion == this.totalQuestions - 1) {
+        this.currentQuestion = 0;
+      } else {
+        this.currentQuestion += 1;
+      }
+      this.questions.forEach((question) => {
+        question.style.transform = `translateX(${
+          -100 * this.currentQuestion
+        }%)`;
+      });
       this.#animateDots(this.currentQuestion, this.previousQuestion);
     });
   }
   goToPreviousQuestionEvent() {
     this.arrowLeft.addEventListener('click', () => {
-      if (this.currentQuestion == 0) {
-        this.questions[this.currentQuestion].classList.remove('active');
-        this.questions[this.totalQuestions - 1].classList.add('active');
-        this.previousQuestion = this.currentQuestion;
-        this.currentQuestion = this.totalQuestions - 1;
-        this.#animateDots(this.currentQuestion, this.previousQuestion);
-        return;
-      }
-      this.questions[this.currentQuestion].classList.remove('active');
-      this.questions[this.currentQuestion - 1].classList.add('active');
       this.previousQuestion = this.currentQuestion;
-      this.currentQuestion -= 1;
+      if (this.currentQuestion == 0) {
+        this.currentQuestion = this.totalQuestions - 1;
+      } else {
+        this.currentQuestion -= 1;
+      }
+      this.questions.forEach((question) => {
+        question.style.transform = `translateX(${
+          -100 * this.currentQuestion
+        }%)`;
+      });
       this.#animateDots(this.currentQuestion, this.previousQuestion);
     });
   }

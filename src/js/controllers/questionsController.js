@@ -5,9 +5,6 @@ class QuestionsController {
   init() {
     questionView.goToNextQuestionEvent();
     questionView.goToPreviousQuestionEvent();
-    console.log(questionView.questions);
-    console.log(questionView.arrowLeft);
-    console.log(questionView.arrowRight);
   }
 }
 
