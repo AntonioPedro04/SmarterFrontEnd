@@ -48,17 +48,11 @@ main {
   flex: 1 0 100%;
   position: relative;
   flex-direction: column;
-  display: none;
+  display: flex;
   height: 60%;
   justify-content: space-between;
   opacity: 1;
   transition: ease 0.5s;
-}
-
-.question.active {
-  display: flex;
-  opacity: 1;
-  z-index: 10;
 }
 
 .options {

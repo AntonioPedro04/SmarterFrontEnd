@@ -1,12 +1,16 @@
 class QuestionsView {
-  questions = document.querySelectorAll('.question');
+  slider = document.querySelector('.slider');
+  questions;
+  totalQuestions;
   arrowLeft = document.querySelector('.arrow.left');
   arrowRight = document.querySelector('.arrow.right');
   dots = document.querySelectorAll('.dot');
   currentQuestion = 0;
-  totalQuestions = this.questions.length;
 
   goToNextQuestionEvent() {
+    this.questions = document.querySelectorAll('.question');
+    this.totalQuestions = this.questions.length;
+    console.log(this.questions);
     this.arrowRight.addEventListener('click', () => {
       this.previousQuestion = this.currentQuestion;
 
@@ -43,6 +47,29 @@ class QuestionsView {
   #animateDots(currentQuestion, previousQuestion) {
     this.dots[currentQuestion].classList.add('active');
     this.dots[previousQuestion].classList.remove('active');
+  }
+
+  renderCurrentList(currentList) {
+    console.log(currentList);
+    currentList.exercises.forEach((exercise) => {
+      const alternatives = exercise.question.alternatives;
+
+      const alternativeMapped = alternatives.map((alternative) => {
+        return `<button class="learn-button">${alternative.text}</button>`;
+      });
+
+      const alternativeMarkup = alternativeMapped.join('');
+
+      const markup = `<div class="question">
+      <div class="text">
+        <h1>${exercise.question.text}</h1>
+      </div>
+      <div class="options">
+        ${alternativeMarkup}
+      </div>
+    </div>`;
+      this.slider.insertAdjacentHTML('beforeend', markup);
+    });
   }
 }
 

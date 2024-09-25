@@ -3,6 +3,7 @@ import { API_URL_AUTH, API_URL } from './config';
 export const state = {
   user: {},
   token: '',
+  currentList: '',
 };
 
 export const validateLogin = async function (data) {
@@ -56,6 +57,29 @@ export const getLoggedUser = async function () {
       username: user.username,
       country: user.country,
     };
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const getCurrrentList = async function () {
+  try {
+    const token = JSON.parse(localStorage.getItem('token'));
+    const response = await fetch(`${API_URL}exerciseList/currentList`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      const result = await response.json();
+      throw new Error(result.message);
+    }
+
+    const result = await response.json();
+
+    state.currentList = result;
   } catch (err) {
     throw err;
   }
