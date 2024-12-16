@@ -1,6 +1,6 @@
-import landingPageView from '../views/landingPageView';
-import loginView from '../views/loginView';
-import homePageView from '../views/homePageView';
+import landingPageView from '../views/landingLoginPage/landingPageView';
+import loginView from '../views/landingLoginPage/loginView';
+import homePageView from '../views/homepage/homePageView';
 import * as model from '../model';
 
 class landingLoginPageController {
@@ -9,18 +9,36 @@ class landingLoginPageController {
     landingPageView.addButtonEvent();
     loginView.createInputAnimation();
     loginView.addCrossEvent();
-    loginView.addHandlerSubmit(this.#controlLogin);
+    loginView.addHandlerLogin(this.#controlValidate);
+    loginView.addHandlerSignUp(this.#controlRegister);
+    loginView.addGoToSignUpEvent();
+    loginView.addSelectEvent();
   }
 
-  #controlLogin = async function () {
+  #controlValidate = async function () {
     try {
       const formData = loginView.getFormData();
       await model.validateLogin(formData);
-      console.log(model.state.user);
-      localStorage.setItem('userData', JSON.stringify(model.state.user));
+      console.log(model.state.token);
+      localStorage.setItem('token', JSON.stringify(model.state.token));
       loginView.goToMainPage();
     } catch (err) {
-      console.log(err.message);
+      loginView.renderMessageLogin('Invalid Username or Password');
+    }
+  };
+
+  #controlRegister = async function () {
+    try {
+      const formData = loginView.getSignUpData();
+      console.log(formData);
+      model.validatePassword(formData.password, formData.confirmation);
+      model.validateUsername(formData.username);
+      model.validateCountry(formData.country);
+      await model.registerUser(formData);
+      localStorage.setItem('token', JSON.stringify(model.state.token));
+      loginView.goToMainPage();
+    } catch (err) {
+      loginView.renderMessageSignUp(err.message);
     }
   };
 }

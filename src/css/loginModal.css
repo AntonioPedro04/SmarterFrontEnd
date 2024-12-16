@@ -1,4 +1,4 @@
-.login-modal {
+.modal {
   position: absolute;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
@@ -15,22 +15,48 @@
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
-  height: 47%;
+  height: 30%;
 }
+
+.signup-modal {
+  min-height: 600px;
+}
+
 .login-modal.hidden {
   display: none;
 }
 
-.login-modal h1 {
+.signup-modal.hidden {
+  display: none;
+}
+
+.modal h1 {
   text-align: center;
   margin-bottom: 2rem;
+  margin-top: 1.3375rem;
 }
 
 .form-control {
   position: relative;
   margin: 1.8rem 0 3rem;
 }
+.signup-modal form .form-control {
+  margin: 1rem 0 1.9rem;
+}
 
+.select-country {
+  cursor: pointer;
+  appearance: none;
+  background: url(../img/downArrow.svg) no-repeat;
+  background-position: 95% center;
+  background-size: 1rem;
+}
+
+.select-country.default {
+  font-weight: 700;
+}
+
+.select-country,
 .form-control input {
   background-color: rgba(211, 211, 211, 0.219);
   border: 0;
@@ -43,6 +69,17 @@
   outline: 0;
   font-size: 1.1rem;
   padding: 1rem 0.5rem;
+}
+
+.signup-label {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.signup-label span {
+  text-decoration: underline;
+  color: rgb(98, 148, 236);
+  cursor: pointer;
 }
 
 form button {
@@ -66,6 +103,14 @@ form label {
   font-weight: 700;
 }
 
+.error {
+  font-size: 0.8rem;
+  margin-top: 0.6rem;
+  left: 0.5rem;
+  position: absolute;
+  color: rgb(199, 0, 0);
+  font-weight: 600;
+}
 .form-control label span {
   transition: transform 0.3s ease;
   display: inline-block;
