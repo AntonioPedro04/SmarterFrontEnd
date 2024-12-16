@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parcel src/landingLoginPage.html src/homePage.html src/questions.html",
+    "start": "parcel src/landingLoginPage.html src/homePage.html src/questions.html src/ranks.html",
     "build": "parcel build src/*.html"
   },
   "author": "Antônio Pedro",
   "license": "ISC",
   "dependencies": {
+    "country-flags-svg": "^2.0.0-beta.1",
     "parcel": "^2.12.0"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"

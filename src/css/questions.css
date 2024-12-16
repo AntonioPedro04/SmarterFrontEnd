@@ -1,3 +1,49 @@
+.answer-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 140px;
+  /* background-color: rgb(255, 255, 255); */
+  outline-style: solid;
+  outline-color: rgb(229, 229, 229);
+  outline-width: 0.1rem;
+  transition: 0.2s;
+}
+
+.answer-background.correct {
+  background-color: rgb(215, 255, 184);
+}
+.answer-background.incorrect {
+  background-color: rgb(255, 223, 224);
+}
+
+.check-container {
+  width: 20%;
+  max-width: 20rem;
+  position: absolute;
+  right: 15%;
+  z-index: var(--z-tooltip);
+  min-width: 6rem;
+  top: 0;
+  margin: auto;
+  bottom: 0;
+  align-self: center;
+}
+
+.skip-container {
+  max-width: 20rem;
+  min-width: 5rem;
+  width: 20%;
+  position: absolute;
+  left: 15%;
+  z-index: var(--z-tooltip);
+  top: 0;
+  margin: auto;
+  bottom: 0;
+  align-self: center;
+}
+
 .arrow.left {
   height: 3rem;
   width: 3rem;
@@ -9,20 +55,6 @@
   width: 3rem;
   transform: rotate(180deg);
   cursor: pointer;
-}
-
-.arrow-left-container {
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
-  z-index: var(--z-tooltip);
-}
-
-.arrow-right-container {
-  position: absolute;
-  bottom: 1rem;
-  right: 0;
-  z-index: var(--z-tooltip);
 }
 
 main {
@@ -43,7 +75,7 @@ main {
   overflow: hidden;
 }
 
-.question {
+.exercise {
   width: 100%;
   flex: 1 0 100%;
   position: relative;
@@ -55,6 +87,19 @@ main {
   transition: ease 0.5s;
 }
 
+.exercise.completed {
+  justify-content: center;
+}
+
+.exercise.completed > * {
+  text-align: center;
+}
+
+.total-xp {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
 .options {
   display: flex;
   justify-content: space-between;
@@ -62,7 +107,7 @@ main {
   row-gap: 1rem;
 }
 
-.options > button {
+.learn-button {
   background-color: black;
   color: #fff;
   border-radius: 1rem;
@@ -75,10 +120,35 @@ main {
   min-width: 20%;
 }
 
-.options > button:hover {
+.learn-button:hover {
   color: black;
   background-color: #fff;
   outline: 0.09rem solid #c3b4b4;
+}
+
+.learn-button.active {
+  color: #fff;
+  background-color: rgb(128, 128, 128);
+}
+
+.learn-button.bottom {
+  width: 100%;
+}
+
+.learn-button.bottom.incorrect {
+  background-color: #ff4b4b;
+}
+.learn-button.incorrect:hover {
+  color: #fff;
+  outline: 0;
+}
+
+.learn-button.bottom.correct {
+  background-color: rgb(88, 204, 2);
+}
+.learn-button.correct:hover {
+  color: #fff;
+  outline: 0;
 }
 
 .dots {
@@ -95,8 +165,10 @@ main {
   background-color: black;
 }
 
-.text {
-  text-align: center;
+.text.completed {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .dots button {
@@ -107,4 +179,10 @@ main {
   border-radius: 0.5rem;
   background-color: rgb(223, 223, 223);
   cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
 }

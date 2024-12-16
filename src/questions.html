@@ -20,32 +20,26 @@
       defer
       src="./js/controllers/questionsController.js"
     ></script>
+    <audio id="correct" src="sound/correct.wav"></audio>
+    <audio id="incorrect" src="sound/incorrect.wav"></audio>
+    <audio id="lessonCompleted" src="sound/lessonCompleted.wav"></audio>
   </head>
   <body>
     <header-component></header-component>
     <main>
-      <div class="slider">
-        <div class="arrow-left-container">
-          <img src="./img/backArrow.svg" alt="arrow left" class="arrow left" />
+      <div class="slider"></div>
+      <div class="answer-background">
+        <div class="skip-container">
+          <!-- <img src="./img/backArrow.svg" alt="arrow left" class="arrow left" /> -->
+          <button class="learn-button bottom" id="skip">Skip</button>
         </div>
-        <div class="arrow-right-container">
-          <img
+        <div class="check-container">
+          <!-- <img
             src="./img/backArrow.svg"
             alt="arrow right"
             class="arrow right"
-          />
-        </div>
-        <div class="dots">
-          <button class="dot active" id="dot-1"></button>
-          <button class="dot" id="dot-2"></button>
-          <button class="dot" id="dot-3"></button>
-          <button class="dot" id="dot-4"></button>
-          <button class="dot" id="dot-5"></button>
-          <button class="dot" id="dot-6"></button>
-          <button class="dot" id="dot-7"></button>
-          <button class="dot" id="dot-8"></button>
-          <button class="dot" id="dot-9"></button>
-          <button class="dot" id="dot-10"></button>
+          /> -->
+          <button class="learn-button bottom" disabled id="check">Check</button>
         </div>
       </div>
     </main>

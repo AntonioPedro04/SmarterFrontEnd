@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   background-color: var(--black-color);
-  z-index: (--z-fixed);
+  z-index: var(--z-fixed);
 }
 
 .nav {

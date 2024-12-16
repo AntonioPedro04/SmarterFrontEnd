@@ -246,7 +246,7 @@ class HeaderView extends HTMLElement {
           </li>
     
           <li class="nav__item">
-            <a href="#" class="nav__link">
+            <a href="ranks.html" class="nav__link">
               <i class="ri-arrow-right-up-line"></i>
               <span>Ranks</span>
             </a>

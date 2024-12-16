@@ -9,7 +9,10 @@ class landingLoginPageController {
     landingPageView.addButtonEvent();
     loginView.createInputAnimation();
     loginView.addCrossEvent();
-    loginView.addHandlerSubmit(this.#controlValidate);
+    loginView.addHandlerLogin(this.#controlValidate);
+    loginView.addHandlerSignUp(this.#controlRegister);
+    loginView.addGoToSignUpEvent();
+    loginView.addSelectEvent();
   }
 
   #controlValidate = async function () {
@@ -20,7 +23,22 @@ class landingLoginPageController {
       localStorage.setItem('token', JSON.stringify(model.state.token));
       loginView.goToMainPage();
     } catch (err) {
-      console.log(console.error(err));
+      loginView.renderMessageLogin('Invalid Username or Password');
+    }
+  };
+
+  #controlRegister = async function () {
+    try {
+      const formData = loginView.getSignUpData();
+      console.log(formData);
+      model.validatePassword(formData.password, formData.confirmation);
+      model.validateUsername(formData.username);
+      model.validateCountry(formData.country);
+      await model.registerUser(formData);
+      localStorage.setItem('token', JSON.stringify(model.state.token));
+      loginView.goToMainPage();
+    } catch (err) {
+      loginView.renderMessageSignUp(err.message);
     }
   };
 }
