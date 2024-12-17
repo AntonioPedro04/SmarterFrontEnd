@@ -149,7 +149,7 @@ h2 {
 }
 
 .person > object {
-  max-height: 1.5rem;
+  width: 2rem;
   border-radius: 0.25rem;
 }
 

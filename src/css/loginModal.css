@@ -116,6 +116,10 @@ form label {
   display: inline-block;
 }
 
+.form-control label {
+  pointer-events: none;
+}
+
 .form-control input:focus + label span,
 .form-control input:valid + label span {
   color: rgb(137, 137, 155);
