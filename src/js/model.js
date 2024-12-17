@@ -1,4 +1,4 @@
-import { API_URL_AUTH, API_URL } from './config';
+import { API_URL_AUTH, API_URL_AUTH_PROD, API_URL_PROD } from './config';
 
 export const state = {
   user: {},
@@ -11,7 +11,7 @@ export const state = {
 
 export const validateLogin = async function (data) {
   try {
-    const response = await fetch(`${API_URL_AUTH}authenticate`, {
+    const response = await fetch(`${API_URL_AUTH_PROD}authenticate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -37,7 +37,7 @@ export const validateLogin = async function (data) {
 export const getLoggedUser = async function () {
   try {
     const token = JSON.parse(localStorage.getItem('token'));
-    const response = await fetch(`${API_URL}user/logged`, {
+    const response = await fetch(`${API_URL_PROD}user/logged`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ export const getLoggedUser = async function () {
 export const getCurrrentList = async function () {
   try {
     const token = JSON.parse(localStorage.getItem('token'));
-    const response = await fetch(`${API_URL}exerciseList/currentList`, {
+    const response = await fetch(`${API_URL_PROD}exerciseList/currentList`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -147,7 +147,7 @@ export const allExerciseDone = function () {
 export const postUserAnswers = async function (userAnswers) {
   try {
     const token = JSON.parse(localStorage.getItem('token'));
-    const response = await fetch(`${API_URL}userAnswer/sendAll`, {
+    const response = await fetch(`${API_URL_PROD}userAnswer/sendAll`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -174,7 +174,7 @@ export const postUserAnswers = async function (userAnswers) {
 export const getWeekRank = async function () {
   try {
     const token = JSON.parse(localStorage.getItem('token'));
-    const response = await fetch(`${API_URL}userAnswer/weekRank`, {
+    const response = await fetch(`${API_URL_PROD}userAnswer/weekRank`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -199,7 +199,7 @@ export const getWeekRank = async function () {
 export const getUserWeekRank = async function () {
   try {
     const token = JSON.parse(localStorage.getItem('token'));
-    const response = await fetch(`${API_URL}userAnswer/userRank`, {
+    const response = await fetch(`${API_URL_PROD}userAnswer/userRank`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -242,12 +242,15 @@ export const UserAlreadyDoneList = async function (exerciseListId) {
 export const getUserAnswersByUserAndList = async function (exerciseListId) {
   try {
     const token = JSON.parse(localStorage.getItem('token'));
-    const response = await fetch(`${API_URL}userAnswer/${exerciseListId}`, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await fetch(
+      `${API_URL_PROD}userAnswer/${exerciseListId}`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
     console.log(response);
     if (!response.ok) {
@@ -300,7 +303,7 @@ export const validateCountry = function (country) {
 
 export const registerUser = async function (data) {
   try {
-    const response = await fetch(`${API_URL_AUTH}register`, {
+    const response = await fetch(`${API_URL_AUTH_PROD}register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
