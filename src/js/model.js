@@ -224,7 +224,7 @@ export const getUserWeekRank = async function () {
 };
 
 export const isUserinTop10 = function () {
-  return state.userRank.position !== null && state.userRank.position <= 3;
+  return state.userRank.position !== null && state.userRank.position <= 10;
 };
 
 export const UserAlreadyDoneList = async function (exerciseListId) {
