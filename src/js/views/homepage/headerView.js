@@ -225,7 +225,7 @@ class HeaderView extends HTMLElement {
     </style>
     <header class="header" id="header">
     <nav class="nav container">
-      <a href="#" class="nav__logo">
+      <a href="homePage.html" class="nav__logo">
       Smarter
     </a
       >
@@ -286,12 +286,13 @@ class HeaderView extends HTMLElement {
           </a>
         </div>
       </div>
-      <div class="nav__toggle" id="nav-toggle">
-        <i class="ri-menu-line"></i>
-      </div>
-    </nav>
-    </header>
-    `;
+      </nav>
+      </header>
+      `;
+    // future code
+    // <div class="nav__toggle" id="nav-toggle">
+    //   <i class="ri-menu-line"></i>
+    // </div>
     this.#navClose = document.getElementById('nav-close');
     this.#navMenu = document.getElementById('nav-menu');
     this.#navToggle = document.getElementById('nav-toggle');
