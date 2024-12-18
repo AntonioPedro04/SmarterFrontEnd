@@ -57,6 +57,7 @@ main {
   transition: 0.05s;
   height: 100%;
   justify-content: space-around;
+  max-height: 300px;
 }
 
 .daily-container > h2 {
