@@ -33,6 +33,7 @@ body {
 .description {
   font-size: 2rem;
   min-height: 3rem;
+  text-align: center;
 }
 
 .start-button {
