@@ -9,6 +9,7 @@ class QuestionsController {
 
   #controlCurrentList = async function () {
     try {
+      await model.getLoggedUser();
       await model.getCurrrentList();
       questionView.renderCurrentList(model.state.currentList);
       questionView.selectAlternativeEvent();
@@ -45,8 +46,6 @@ class QuestionsController {
         model.postUserAnswers(model.state.userAnswers);
         return;
       }
-
-      await model.getLoggedUser();
 
       const { exerciseId, status } =
         questionView.checkAnswer(model.state.currentList) || {};
