@@ -9,6 +9,10 @@ main {
   position: relative;
 }
 
+.nav__menu.show-menu {
+  z-index: 100;
+}
+
 .weekly-ranks-container {
   display: flex;
   flex-direction: column;
