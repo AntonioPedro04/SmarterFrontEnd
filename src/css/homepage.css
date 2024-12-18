@@ -55,7 +55,6 @@ main {
   border-color: #c3b4b4;
   cursor: pointer;
   transition: 0.05s;
-  height: 100%;
   justify-content: space-around;
   max-height: 300px;
 }
