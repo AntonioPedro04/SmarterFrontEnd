@@ -6,7 +6,7 @@ class HomePageView {
 
   renderWelcomeMessage(data) {
     const containerEl = document.querySelector('.welcome-container');
-    const markup = `<h1>Welcome back, ${data.firstname}</h1>`;
+    const markup = `<h1>Welcome back, ${data.username}</h1>`;
     console.log(markup);
     console.log(containerEl);
     containerEl.insertAdjacentHTML('afterbegin', markup);
