@@ -69,7 +69,7 @@ class QuestionsView {
       const alternatives = exercise.question.alternatives;
 
       const alternativeMapped = alternatives.map((alternative) => {
-        return `<button class="learn-button" id="${alternative.id}">${alternative.text}</button>`;
+        return `<button class="learn-button alternative" id="${alternative.id}">${alternative.text}</button>`;
       });
 
       const alternativeMarkup = alternativeMapped.join('');
