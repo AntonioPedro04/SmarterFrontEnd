@@ -2,7 +2,7 @@ class LandingPageView {
   #textEl = document.querySelector('h2');
   #button = document.querySelector('.start-button');
   #login = document.querySelector('.login-modal');
-  #text = 'Medical knowledge. No downloads. Fun. Free.';
+  #text = 'Medical knowledge. No downloads. Fun.';
   #letterIndex = 1;
   #intervalId = null;
 
