@@ -230,69 +230,80 @@ class HeaderView extends HTMLElement {
     </a
       >
       <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="homePage.html" class="nav__link">
-              <i class="ri-arrow-right-up-line"></i>
-              <span>Home</span>
-            </a>
-          </li>
-    
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <i class="ri-arrow-right-up-line"></i>
-              <span>Courses</span>
-            </a>
-          </li>
-    
-          <li class="nav__item">
-            <a href="ranks.html" class="nav__link">
-              <i class="ri-arrow-right-up-line"></i>
-              <span>Ranks</span>
-            </a>
-          </li>
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="homePage.html" class="nav__link">
+            <i class="ri-arrow-right-up-line"></i>
+            <span>Home</span>
+          </a>
+        </li>
+
         </ul>
-    
-        <div class="nav__close" id="nav-close">
-          <i class="ri-close-large-line"></i>
         </div>
-    
-        <div class="nav__social">
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            class="nav__social-link"
-          >
-            <i class="ri-instagram-line"></i>
-          </a>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            class="nav__social-link"
-            ><i class="ri-github-line"></i
-          ></a>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            class="nav__social-link"
-            ><i class="ri-dribbble-line"></i
-          ></a>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            class="nav__social-link"
-          >
-            <i class="ri-linkedin-box-line"></i>
-          </a>
-        </div>
-      </div>
       </nav>
       </header>
       `;
+    // <div class="nav__menu" id="nav-menu">
+    //   <ul class="nav__list">
+    //     <li class="nav__item">
+    //       <a href="homePage.html" class="nav__link">
+    //         <i class="ri-arrow-right-up-line"></i>
+    //         <span>Home</span>
+    //       </a>
+    //     </li>
+
+    //     </ul>
+
+    // //   <div class="nav__close" id="nav-close">
+    // //   <i class="ri-close-large-line"></i>
+    // //   </div>
+
+    // //   <div class="nav__social">
+    // //   <a
+    //   href="https://www.instagram.com"
+    //   target="_blank"
+    //       class="nav__social-link"
+    //     >
+    //     <i class="ri-instagram-line"></i>
+    //     </a>
+    //     <a
+    //     href="https://www.instagram.com"
+    //     target="_blank"
+    //     class="nav__social-link"
+    //     ><i class="ri-github-line"></i
+    //     ></a>
+    //     <a
+    //     href="https://www.instagram.com"
+    //     target="_blank"
+    //     class="nav__social-link"
+    //     ><i class="ri-dribbble-line"></i
+    //     ></a>
+    //     <a
+    //     href="https://www.instagram.com"
+    //     target="_blank"
+    //     class="nav__social-link"
+    //     >
+    //     <i class="ri-linkedin-box-line"></i>
+    //     </a>
+    //     </div>
+    //     </div>
     // future code
     // <div class="nav__toggle" id="nav-toggle">
     //   <i class="ri-menu-line"></i>
     // </div>
+    // <li class="nav__item">
+    //   <a href="#" class="nav__link">
+    //     <i class="ri-arrow-right-up-line"></i>
+    //     <span>Courses</span>
+    //   </a>
+    // </li>
+
+    // <li class="nav__item">
+    //   <a href="ranks.html" class="nav__link">
+    //     <i class="ri-arrow-right-up-line"></i>
+    //     <span>Ranks</span>
+    //   </a>
+    // </li>
     this.#navClose = document.getElementById('nav-close');
     this.#navMenu = document.getElementById('nav-menu');
     this.#navToggle = document.getElementById('nav-toggle');

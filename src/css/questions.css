@@ -41,6 +41,7 @@
   margin: auto;
   bottom: 0;
   align-self: center;
+  display: none;
 }
 
 .arrow.left {
