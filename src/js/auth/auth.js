@@ -46,4 +46,16 @@ export const isTokenValid = async function () {
   }
 };
 
+removeTrackingLinkParams = function () {
+  let url = new URL(window.location.href);
+
+  console.log(url);
+
+  console.log(
+    url.host + url.pathname.substring(0, url.pathname.lastIndexOf('/'))
+  );
+};
+
 checkAuthToken();
+
+removeTrackingLinkParams();
