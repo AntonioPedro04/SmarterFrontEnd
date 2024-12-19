@@ -46,6 +46,7 @@ class HomePageView {
     </div><li class="user"> 
       <div class="person">
         <p class="position">${userRank.position ? userRank.position : '-'}</p>
+        <!--
         <object
           type="image/svg+xml"
           data="${findFlagUrlByIso3Code(userRank.country)}"
@@ -53,6 +54,7 @@ class HomePageView {
         >
           Your browser does not support SVG
         </object>
+        -->
         <p class="name">${userRank.userName}</p>
         <p class="exp">${userRank.points} xp</p>
       </div>
