@@ -14,6 +14,7 @@ class QuestionsView {
   activeAnswer;
   lessonCompleted = false;
   finalScreen = false;
+  activeButton;
 
   goToNextQuestionEvent() {
     this.questions = document.querySelectorAll('.exercise');
@@ -99,6 +100,8 @@ class QuestionsView {
         this.#removeClassFromSiblings(button);
         this.activeAnswer = button.innerText;
         this.checkButton.disabled = false;
+        this.activeButton = button;
+        console.log(this.activeButton);
       }
     });
   }
@@ -157,6 +160,7 @@ class QuestionsView {
       this.checkButton.classList.add('correct');
       this.skipButton.style.display = 'none';
       this.checkButton.innerText = 'Continue';
+      this.activeButton.classList.add('correct');
       console.log(currentList.exercises[exerciseInitialIndex]);
       return {
         exerciseId: currentList.exercises[exerciseInitialIndex].id,
@@ -170,6 +174,7 @@ class QuestionsView {
       this.disableClickOnAlternatives(this.questions[this.currentExercise]);
       this.answerDiv.classList.add('incorrect');
       this.checkButton.classList.add('incorrect');
+      this.activeButton.classList.add('incorrect');
       this.skipButton.style.display = 'none';
       this.checkButton.innerText = 'Continue';
       return {
