@@ -19,6 +19,7 @@ class HomePageView {
       const markup = `<li>
                   <div class="person">
                     <p class="position">${userData.position}</p>
+                    <!--
                     <object
                       type="image/svg+xml"
                       data="${findFlagUrlByIso3Code(userData.country)}"
@@ -26,6 +27,7 @@ class HomePageView {
                     >
                       Your browser does not support SVG
                     </object>
+                    -->
                     <p class="name">${userData.userName}</p>
                     <p class="exp">${userData.points} xp</p>
                   </div>
