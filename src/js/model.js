@@ -284,7 +284,11 @@ export const validatePassword = function (password, confirmation) {
 export const validateUsername = function (username) {
   try {
     if (username.length <= 5) {
-      throw new Error('Username must have more than 8 characters');
+      throw new Error('Username must have more than 6 characters');
+    }
+
+    if (username.length >= 15) {
+      throw new Error('Username must have less than 15 characters');
     }
   } catch (err) {
     throw err;
