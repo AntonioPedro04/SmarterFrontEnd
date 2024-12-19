@@ -14,8 +14,10 @@ checkAuthToken = async function () {
 
     if (
       !isValid &&
-      (!window.location.href.endsWith('index.html') ||
-        !window.location.href.endsWith('study/'))
+      !(
+        window.location.href.endsWith('index.html') ||
+        window.location.href.endsWith('study/')
+      )
     ) {
       window.location.href = 'index.html';
     }
