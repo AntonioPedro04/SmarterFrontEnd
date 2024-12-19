@@ -5,9 +5,10 @@ checkAuthToken = async function () {
     const isValid = await isTokenValid();
     console.log(window.location.href);
     if (
-      isValid &&
-      (window.location.href.endsWith('index.html') ||
-        window.location.href.endsWith('study/'))
+      (isValid &&
+        (window.location.href.endsWith('index.html') ||
+          window.location.href.endsWith('study/'))) ||
+      window.location.href.includes('?')
     ) {
       window.location.href = 'homePage.html';
     }
