@@ -7,6 +7,7 @@ class HomePageController {
     homePageView.addButtonLearnEvent();
     this.#controlLoggedUser();
     this.#controlWeekRank();
+    homePageView.setCountdown();
   }
 
   #controlLoggedUser = async function () {

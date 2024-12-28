@@ -2,6 +2,7 @@ class LandingPageView {
   #textEl = document.querySelector('h2');
   #button = document.querySelector('.start-button');
   #login = document.querySelector('.login-modal');
+  #signup = document.querySelector('.signup-modal');
   #text = 'Medical knowledge. No downloads. Fun.';
   #letterIndex = 1;
   #intervalId = null;
@@ -19,7 +20,7 @@ class LandingPageView {
   }
   addButtonEvent() {
     this.#button.addEventListener('click', () => {
-      this.#login.classList.toggle('hidden');
+      this.#signup.classList.toggle('hidden');
     });
   }
 }

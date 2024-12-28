@@ -3,6 +3,7 @@ import { findFlagUrlByIso3Code } from 'country-flags-svg/dist';
 class HomePageView {
   #buttonLearn = document.querySelector('.learn-button');
   #rankListEl = document.querySelector('.rank-list');
+  #countdownSpanEl = document.querySelector('.countdown-span');
 
   renderWelcomeMessage(data) {
     const containerEl = document.querySelector('.welcome-container');
@@ -72,9 +73,34 @@ class HomePageView {
 
   addButtonLearnEvent() {
     console.log(this.#buttonLearn);
+    console.log(this);
     this.#buttonLearn.addEventListener('click', () => {
       window.location.href = '../../questions.html';
     });
+  }
+
+  setCountdown() {
+    this.#renderCountdown();
+    setInterval(this.#renderCountdown.bind(this), 1000);
+  }
+
+  #renderCountdown() {
+    let time = this.#calculateTime();
+    this.#countdownSpanEl.innerText = time;
+  }
+
+  #calculateTime() {
+    let d = new Date();
+    let hours = 23 - d.getUTCHours();
+    let min = 59 - d.getMinutes();
+    if ((min + '').length == 1) {
+      min = '0' + min;
+    }
+    let sec = 59 - d.getSeconds();
+    if ((sec + '').length == 1) {
+      sec = '0' + sec;
+    }
+    return hours + ':' + min + ':' + sec;
   }
 }
 
